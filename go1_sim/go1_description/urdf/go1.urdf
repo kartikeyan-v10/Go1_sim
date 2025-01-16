@@ -30,7 +30,7 @@
   </material>
   <material name="white">
     <color rgba="1.0 1.0 1.0 1.0"/>
-  </material>
+  </material>  
   <!-- ros_control plugin -->
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
@@ -1824,4 +1824,3 @@
     </sensor>
   </gazebo>
 </robot>
-
