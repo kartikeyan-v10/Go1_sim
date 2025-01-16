@@ -68,13 +68,21 @@ class MapPublisher(Node):
 
         while rclpy.ok():
             self.publisher_.publish(map_msg)
+<<<<<<< HEAD
             self.get_logger().info('Map published')
+=======
+            #self.get_logger().info('Map published')
+>>>>>>> 7921eac (Initial commit)
             time.sleep(1)
 
 def main(args=None):
     rclpy.init(args=args)
     yaml_file = os.path.join(get_package_share_directory('go1_navigation'), 'map', 'map.yaml')
+<<<<<<< HEAD
     # yaml_file = '/home/atharvag/ros2_ws/src/go1_sim/go1_navigation/map/map.yaml'
+=======
+    #yaml_file = '/home/kartikeyan-v10/go1_ws/src/go1_sim/go1_navigation/map/map.yaml'
+>>>>>>> 7921eac (Initial commit)
     map_publisher = MapPublisher(yaml_file)
     rclpy.spin(map_publisher)
 

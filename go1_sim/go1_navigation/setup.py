@@ -27,7 +27,9 @@ setup(
     entry_points={
         'console_scripts': [
             'nav_tf_publisher = go1_navigation.tf_publisher:main',
-            'static_map_publisher = go1_navigation.static_map_publisher:main'
+            'static_map_publisher = go1_navigation.static_map_publisher:main',
+            'image_capture = go1_navigation.image_capture:main'
+
         ],
     },
 )

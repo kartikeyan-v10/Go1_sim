@@ -4,8 +4,13 @@ bt_navigator:
     global_frame: map
     robot_base_frame: base_link
     odom_topic: odom
+<<<<<<< HEAD
     default_nav_to_pose_bt_xml: "/home/atharvag/ros2_ws/src/go1_sim/go1_navigation/xml/go1_bt.xml" # replace /home/atharva/ with the path to your ros 2 workspace
     default_nav_through_poses_bt_xml: "/home/atharvag/ros2_ws/src/go1_sim/go1_navigation/xml/go1_bt.xml"
+=======
+    default_nav_to_pose_bt_xml: "/home/kartikeyan-v10/go1_ws/src/go1_sim/go1_navigation/xml/go1_bt.xml" # replace /home/kartikeyan-v10/ with the path to your ros 2 workspace
+    default_nav_through_poses_bt_xml: "/home/kartikeyan-v10/go1_ws/src/go1_sim/go1_navigation/xml/go1_bt.xml"
+>>>>>>> 7921eac (Initial commit)
     bt_loop_duration: 10
     default_server_timeout: 20
     # 'default_nav_through_poses_bt_xml' and 'default_nav_to_pose_bt_xml' are use defaults:
@@ -104,7 +109,7 @@ controller_server:
       plugin: "nav2_controller::SimpleGoalChecker"
       xy_goal_tolerance: 0.20 #0.30
       yaw_goal_tolerance: 0.3 #0.4
-    # DWB parameters
+  # DWB parameters
     FollowPath:
       plugin: "dwb_core::DWBLocalPlanner"
       debug_trajectory_details: True
@@ -159,7 +164,11 @@ local_costmap:
       width: 5
       height: 5
       resolution: 0.05
+<<<<<<< HEAD
       robot_radius: 0.10 # 0.40
+=======
+      robot_radius: 0.40 # 0.10
+>>>>>>> 7921eac (Initial commit)
       plugins: ["static_layer", "inflation_layer"]
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
@@ -192,7 +201,11 @@ global_costmap:
         map_subscribe_transient_local: True
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
+<<<<<<< HEAD
         cost_scaling_factor: 0.6
+=======
+        cost_scaling_factor: 0.4
+>>>>>>> 7921eac (Initial commit)
         inflation_radius: 0.60
       always_send_full_costmap: True
 
@@ -203,7 +216,11 @@ planner_server:
     planner_plugins: ["GridBased"]
     GridBased:
       plugin: "nav2_navfn_planner/NavfnPlanner"
+<<<<<<< HEAD
       tolerance: 0.5
+=======
+      tolerance: 0.7
+>>>>>>> 7921eac (Initial commit)
       use_astar: false
       allow_unknown: true
 
