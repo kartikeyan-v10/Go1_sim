@@ -49,11 +49,11 @@ def generate_launch_description():
         launch_arguments={'verbose': 'true'}.items()
     ) 
        
-    world_file_name = LaunchConfiguration('world_file_name')
+    world_file_name = LaunchConfiguration('simple_rooms.world')
 
     world_file_name_launch_arg = DeclareLaunchArgument(
-        'world_file_name',
-        default_value='test_latest.world'
+        'simple_rooms.world',
+        default_value='simple_rooms.world'
     )
 
 

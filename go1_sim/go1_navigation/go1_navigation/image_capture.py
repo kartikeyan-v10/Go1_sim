@@ -14,8 +14,8 @@ class ImageCapture(Node):
         super().__init__('image_capture')           
         self.color_cam_sub = self.create_subscription(Image, '/camera/image_raw', self.cv_bridge, 10)
         self.bridge = CvBridge()
-        image_processing_rate = 0.2
-        self.timer = self.create_timer(image_processing_rate, self.process_image)      
+        #image_processing_rate = 0.2
+        #self.timer = self.create_timer(image_processing_rate, self.process_image)      
         self.cv_image = None   
         self.ids = []                                                        
         
@@ -24,6 +24,7 @@ class ImageCapture(Node):
         try:
             # Convert the ROS Image message to OpenCV format
             self.cv_image = self.bridge.imgmsg_to_cv2(msg, 'bgr8')
+            self.process_image()
 
         except CvBridgeError as e:
             self.get_logger().error(f'CvBridge Error: {str(e)}')
@@ -47,12 +48,16 @@ class ImageCapture(Node):
 
             # Detect the ArUco markers in the grayscale image
             corners, id, _ = cv2.aruco.detectMarkers(gray_image, aruco_dict, parameters=aruco_params)
+
+            if id is not None:
+                print("Aruco Marker Detected")
             
             if (id[0] in self.ids): 
                 pass
             
             else:
-                cv2.imwrite(f"/home/Inspection/{id[0]}.png", self.cv_image)
+                cv2.imwrite(f"/home/kartikeyan-v10/Inspection/{id[0]}.png", self.cv_image)
+                print("Image captured")
                 self.ids.append(id[0])
             
             id.clear()
