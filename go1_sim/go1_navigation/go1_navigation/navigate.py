@@ -27,8 +27,8 @@ def main():
     #nav.waitUntilNav2Active()
 
     goal_pose1 = create_pose_stamped(nav, 4.7, 3.0, 1.57)
-    goal_pose2 = create_pose_stamped(nav, 7.0, -2.0, 0.0)
-    goal_pose3 = create_pose_stamped(nav, 2.5, -2.15, 3.14)
+    goal_pose2 = create_pose_stamped(nav, 2.5, -2.15, 3.14)
+    goal_pose3 = create_pose_stamped(nav, 7.0, -2.0, 0.0)
     goal_pose4 = create_pose_stamped(nav, 6.5, 0.75, 1.57)
     goal_pose5 = create_pose_stamped(nav, -2.0, 3.0, 3.14)
     goal_pose6 = create_pose_stamped(nav, 0.75, -2.30, 0.00)
